@@ -66,7 +66,7 @@ Supported hosts:
 From a local clone:
 
 ```bash
-git clone https://github.com/harispasic/nordnet-mcp.git
+git clone https://github.com/hpasic/nordnet-mcp.git
 cd nordnet-mcp
 uv run nordnet-mcp
 ```

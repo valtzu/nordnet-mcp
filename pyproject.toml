@@ -26,9 +26,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/harispasic/nordnet-mcp"
-Repository = "https://github.com/harispasic/nordnet-mcp"
-Issues = "https://github.com/harispasic/nordnet-mcp/issues"
+Homepage = "https://github.com/hpasic/nordnet-mcp"
+Repository = "https://github.com/hpasic/nordnet-mcp"
+Issues = "https://github.com/hpasic/nordnet-mcp/issues"
 
 [project.scripts]
 nordnet-mcp = "nordnet_mcp:main"
