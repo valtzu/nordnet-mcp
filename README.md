@@ -192,7 +192,36 @@ If you'd rather not rely on the QR flow, you can provide a session token yoursel
 6. Copy its value and set it as `NORDNET_SESSION_TOKEN` in `.env` (or the MCP client's
    `env` block).
 7. It will usually look like a UUID-style value such as `7f3a91c2-5648-4dbe-8a17-29c4e6b1f053`.
->>>>>>> fdd1965 (feat: login via QR code)
+
+## Use as an agent skill (Docker only, no install)
+
+### Claude Code plugin (fully automatic)
+
+This repo is also a Claude Code plugin: it bundles an `.mcp.json` that registers the
+dockerized server for you, so there's no manual config editing at all. Install it
+with:
+
+```
+/plugin marketplace add hpasic/nordnet-mcp
+/plugin install nordnet-mcp@nordnet-mcp-marketplace
+```
+
+Claude Code prompts for your Nordnet market host (and, optionally, a client ID
+override) during install, then starts `docker run ... ghcr.io/hpasic/nordnet-mcp` on
+its own whenever the plugin is enabled — no `uv`/Python install needed, only a
+working Docker daemon. Run `/nordnet_auth` (or just ask about your Nordnet account)
+to trigger QR login.
+
+### Other agents (Agent Skills)
+
+If your agent supports [Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
+but not this plugin mechanism, point it at
+[`skills/nordnet-portfolio/`](skills/nordnet-portfolio/SKILL.md) instead. It walks
+the agent through registering the dockerized server (`ghcr.io/hpasic/nordnet-mcp`)
+with whatever MCP host it's running in and then through QR login — no `uv`/Python
+install needed, only a working Docker daemon. It isn't Claude-specific: the
+underlying `docker run` command and MCP config work the same for any MCP-capable
+agent.
 
 ## Available tools
 

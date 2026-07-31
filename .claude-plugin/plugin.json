@@ -1,0 +1,27 @@
+{
+  "name": "nordnet-mcp",
+  "description": "Read-only MCP access to Nordnet brokerage accounts (Sweden, Norway, Denmark, Finland) — accounts, positions, trades, balances, orders, and instrument lookup. Runs as a dockerized MCP server, so no Python/uv install is needed, only Docker.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Haris Pasic"
+  },
+  "homepage": "https://github.com/hpasic/nordnet-mcp",
+  "repository": "https://github.com/hpasic/nordnet-mcp",
+  "license": "MIT",
+  "userConfig": {
+    "nordnet_host": {
+      "type": "string",
+      "title": "Nordnet market host",
+      "description": "Must match the market your Nordnet mobile app is registered in: public.nordnet.se (Sweden), public.nordnet.no (Norway), public.nordnet.dk (Denmark), or public.nordnet.fi (Finland).",
+      "default": "public.nordnet.se",
+      "required": true
+    },
+    "nordnet_client_id": {
+      "type": "string",
+      "title": "Nordnet client ID override (optional)",
+      "description": "Leave empty unless Nordnet responds with NEXT_INVALID_SESSION — then set this to NEXT and reinstall/restart the server.",
+      "default": "",
+      "required": false
+    }
+  }
+}

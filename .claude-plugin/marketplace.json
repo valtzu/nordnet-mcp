@@ -1,0 +1,15 @@
+{
+  "name": "nordnet-mcp-marketplace",
+  "owner": {
+    "name": "Valtteri R",
+    "url": "https://github.com/valtzu"
+  },
+  "description": "Read-only MCP access to Nordnet brokerage accounts, packaged as a Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "nordnet-mcp",
+      "source": "./",
+      "description": "Read-only MCP access to Nordnet brokerage accounts — accounts, positions, trades, balances, orders, and instrument lookup. Dockerized, no Python/uv install needed."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "nordnet": {
+      "command": "docker",
+      "args": [
+        "run", "--rm", "-i",
+        "-e", "NORDNET_HOST=${user_config.nordnet_host}",
+        "-e", "NORDNET_CLIENT_ID=${user_config.nordnet_client_id}",
+        "ghcr.io/hpasic/nordnet-mcp:latest"
+      ]
+    }
+  }
+}
